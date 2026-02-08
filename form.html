@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Player - Football Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1>Football Gallery</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="details.html">Details</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="form.html" class="active">Add Player</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <form id="playerForm">
+            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 20px;">Add New Player</h2>
+            
+            <div class="form-group">
+                <label for="playerName">Player Name *</label>
+                <input type="text" id="playerName" name="playerName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="position">Position *</label>
+                <select id="position" name="position" required>
+                    <option value="">Select Position</option>
+                    <option value="Goalkeeper">Goalkeeper</option>
+                    <option value="Defender">Defender</option>
+                    <option value="Midfielder">Midfielder</option>
+                    <option value="Forward">Forward</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="nationality">Nationality *</label>
+                <input type="text" id="nationality" name="nationality" required>
+            </div>
+
+            <div class="form-group">
+                <label for="jerseyNumber">Jersey Number *</label>
+                <input type="number" id="jerseyNumber" name="jerseyNumber" min="1" max="99" required>
+            </div>
+
+            <div class="form-group">
+                <label for="club">Current Club *</label>
+                <input type="text" id="club" name="club" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dateOfBirth">Date of Birth</label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth">
+            </div>
+
+            <div class="form-group">
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" name="height" min="150" max="220">
+            </div>
+
+            <div class="form-group">
+                <label for="imageUrl">Image URL *</label>
+                <input type="url" id="imageUrl" name="imageUrl" required placeholder="https://example.com/player-image.jpg">
+            </div>
+
+            <div class="form-group">
+                <label for="summary">Player Summary *</label>
+                <textarea id="summary" name="summary" required placeholder="Brief description of the player's career and playing style..."></textarea>
+            </div>
+
+            <button type="submit">Add Player</button>
+        </form>
+
+        <div id="successMessage" style="display: none; background-color: #2ecc71; color: white; padding: 15px; border-radius: 5px; text-align: center; max-width: 600px; margin: 20px auto;">
+            Player added successfully!
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Football Players Gallery | CSC 340 Assignment</p>
+    </footer>
+
+    <script>
+        document.getElementById('playerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const successMsg = document.getElementById('successMessage');
+            successMsg.style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Hide message after 3 seconds
+            setTimeout(function() {
+                successMsg.style.display = 'none';
+            }, 3000);
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Players Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1>Football Gallery</h1>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="details.html">Details</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="form.html">Add Player</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="intro">
+            <h2>Player Gallery</h2>
+            <p>Browse through our collection of football players. Use the search bar to filter by name, position, or nationality.</p>
+        </section>
+
+        <section class="search-container">
+            <input type="text" id="searchBar" placeholder="Search players..." />
+        </section>
+
+        <section class="gallery" id="playerGallery">
+            <!-- Players will be loaded here by JavaScript -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Football Players Gallery | CSC 340 Assignment</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
